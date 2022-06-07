@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOOD DELIVERY</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" media="screen and (max-width: 1420px)" href="phone.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css/">
+</head>
+<body>
+<section id="firstpart">
+	<div id="navbar" class="animate__fadeInDown">
+	<ul class="menu">
+		<li><a href="#" id="menu-content" onclick="hide()">HOME</a></li>
+		<li><a href="#cards" id="menu-content" onclick="hide()">SERVICES</a></li>
+		<li><a href="#achievements" id="menu-content" onclick="hide()">ABOUT</a></li>
+		<li><a href="#contact-form" id="menu-content" onclick="hide()">CONTACT</a></li>
+	</ul>
+	</div>
+	<div id="small-nav">
+		
+		<a href="#" class="bars" onclick="slideshow()"><i class="fa fa-bars fa-5x" aria-hidden="true"></i></a>	
+	</div>
+	
+	<div id="headcontent">
+		<h1 class="heading">BEST FOOD DELIVEREY</h1>
+		<p>Enjoy with your family and friends</p>
+		<p>perfect place to chill and date</p>
+		<a class="button" href="#">Order Now</a>
+	</div>
+</section>
+
+	<h1 class="service-head">Our Services</h1>
+<section id="cards">
+
+	<div class="list">
+		<img src="images/img3.png">
+		<a href="">Food Quality</a>
+		<p>Rated by ITC</p>
+		<p>Rating : 5 stars</p>
+		<p>best packing</p>
+
+	</div>
+
+	<div class="list">
+		<img src="images/img4.png">
+		<a href="">Food Service</a>
+		<p>Rated by ITC</p>
+		<p>Rating : 5 stars</p>
+		<p>best service</p>
+
+	</div>
+
+	<div class="list">
+		<img src="images/img2.png">
+		<a href="">Food Delivery</a>
+		<p>Rated by ITC</p>
+		<p>Rating : 5 stars</p>
+		<p>best delivery service</p>
+
+	</div>
+</section>
+
+<section id="contact-form">
+	<h1>Contact Us</h2>
+	<form method="post" action="/cls">
+		<div class="details">
+			<label for="name">Name :    </label>
+			<input type="text" name="name" placeholder="enter your name">
+		</div>
+		<div class="details">
+			<label for="email">Email id :    </label>
+			<input type="text" name="email" placeholder="enter your email">
+		</div>
+		<div class="details">
+			<label for="phone">Phone No. :   </label>
+			<input type="text" name="phone" placeholder="enter your phone no.">
+		</div>
+		<div class="details">
+			<label class="address-text" for="address">Address :   </label>
+			<textarea name="message" cols="30" rows="10 " placeholder="enter your address"></textarea>
+		</div>
+		<a href="#">Submit</a>
+	</form>
+</section>
+
+
+<section id="achievements">
+
+	<div class="coloumns">
+		<div class="one">
+				<div class="sponsers">
+						<h2>Our Sponsers</h2>
+						<p>Google</p>
+						<p>Linked In</p>
+						<p>KFC</p>
+						<p>East India Company</p>
+				</div>
+		</div>
+	</div>
+	<div class="coloumns">
+		<div class="customers">
+				<h2>Our Customers</h2>
+				<p>Google</p>
+				<p>Linked In</p>
+				<p>KFC</p>
+				<p>East India Company</p>
+		</div>
+	</div>
+</section>
+
+
+<script type="text/javascript">
+
+	let a=document.getElementById('navbar');
+	function slideshow()
+	{
+		
+		if(a.style.display === "none")
+		{
+			a.style.display="block";
+			document.getElementById('small-nav').style.backgroundColor='red';
+		}
+		else
+		{	a.style.display="none";
+			document.getElementById('small-nav').style.backgroundColor='rgba(0,0,0,0.3)';
+		}
+	}
+
+	function hide()
+	{
+		let b=document.getElementById("navbar");
+		if(b.style.display === "none")
+		{b.style.display="block";
+		}
+		else
+		{b.style.display="none";
+		document.getElementById('small-nav').style.backgroundColor='rgba(0,0,0,0.3)';
+		}
+	}
+	
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
