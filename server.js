@@ -1,22 +1,29 @@
-const express = require("express");
-const app = express();
+
 const mongoose = require("mongoose");
+const express = require("express");
 const bodyParser = require("body-parser");
-const { send } = require("process");
+const app = express();
+
+app.use(bodyParser.urlencoded({extended:true}));
 
 
-app.use(express.urlencoded({extended: true}));
+mongoose.connect("mongodb+srv://abhijeetbasfore:WZPgZElhFjQJwo53@cluster0.pz4ax.mongodb.net/Details?retryWrites=true&w=majority",{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Connection Successful")
+}).catch((err) => console.log(err));
 
-mongoose.connect("mongodb+srv://abhijeetbasfore:abhijeet123@cluster0.pz4ax.mongodb.net/", {useNewgitUrlParser: true},{useUnifiedTopology: true});
 
 const infoSchema = {
-    name: String,
+    name : String,
     email : String,
-    phone: Number,
-    message: String
+    phone : Number,
+    message : String
 }
 
-const Info = mongoose.model("Info", infoSchema)
+const Info = mongoose.model("Info", infoSchema);
+
 
 app.get("/",function(req, res){
     res.sendFile(__dirname + "/index.html");
@@ -24,16 +31,15 @@ app.get("/",function(req, res){
 
 app.post("/", function(req, res){
     let newInfo = new Info ({
-        name: req.body.name,
-        email:req.body.email,
-        phone:req.body.phone,
-        message:req.body.message
+        name : req.body.name,
+        email : req.body.email,
+        phone : req.body.phone,
+        message : req.body.message
     });
     newInfo.save();
-    res.redirect('/');
-    
+    res.redirect("/");
 })
 
 app.listen(3000,function(){
-    console.log("server is up");
+    console.log("server is running");
 })
